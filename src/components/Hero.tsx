@@ -32,29 +32,15 @@ export function Hero() {
           </div>
         </div>
 
-        <aside className="hero__media reveal reveal-delay-2" aria-hidden="true">
-          {/* === Placeholder photo === */}
-          {/* Remplacez ce bloc par <img src="/photo.jpg" alt="Jean-François Uccelli" /> */}
-          {/* Déposez votre photo dans le dossier /public sous le nom photo.jpg */}
+        <aside className="hero__media reveal reveal-delay-2">
           <div className="hero__photo">
             <div className="hero__photo-frame">
-              <svg
-                className="hero__photo-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-              <span className="hero__photo-label">Photo</span>
+              <img
+                className="hero__photo-img"
+                src="/photo.jpg"
+                alt={`${profile.firstName} ${profile.lastName}`}
+              />
             </div>
-            <p className="hero__photo-hint">
-              <span className="hero__photo-hint-mono">/public/photo.jpg</span>
-            </p>
           </div>
         </aside>
       </div>

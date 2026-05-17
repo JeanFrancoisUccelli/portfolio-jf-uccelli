@@ -154,7 +154,7 @@
   color: var(--color-accent);
 }
 
-/* ---------- Media (droite) — placeholder photo ---------- */
+/* ---------- Media (droite) — photo ---------- */
 .hero__media {
   display: flex;
   justify-content: center;
@@ -162,10 +162,6 @@
 
 .hero__photo {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-3);
 }
 
 .hero__photo-frame {
@@ -175,30 +171,8 @@
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-3);
-  color: var(--color-muted);
   overflow: hidden;
   transition: transform 0.4s var(--ease);
-}
-
-.hero__photo-frame::before {
-  /* Petites diagonales décoratives discrètes */
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent 0,
-    transparent 14px,
-    var(--color-accent-pale) 14px,
-    var(--color-accent-pale) 15px
-  );
-  opacity: 0.45;
-  z-index: 0;
 }
 
 .hero__photo-frame::after {
@@ -212,41 +186,18 @@
   border-top: 2px solid var(--color-accent);
   border-left: 2px solid var(--color-accent);
   border-top-left-radius: 4px;
+  z-index: 2;
 }
 
 .hero__photo-frame:hover {
   transform: translateY(-4px);
 }
 
-.hero__photo-icon {
-  position: relative;
-  z-index: 1;
-  width: 56px;
-  height: 56px;
-  color: var(--color-accent);
-}
-
-.hero__photo-label {
-  position: relative;
-  z-index: 1;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 0.95rem;
-  color: var(--color-muted);
-}
-
-.hero__photo-hint {
-  font-size: 0.78rem;
-  color: var(--color-muted);
-  text-align: center;
-}
-
-.hero__photo-hint-mono {
-  font-family: var(--font-mono);
-  background: var(--color-bg-alt);
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.75rem;
+.hero__photo-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ---------- Marquee bas du hero ---------- */
