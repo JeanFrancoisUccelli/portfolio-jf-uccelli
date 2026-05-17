@@ -17,8 +17,6 @@ export const contact = {
   linkedinUrl: 'https://www.linkedin.com/in/jeff-uccelli',
   github: 'github.com/JeanFrancoisUccelli',
   githubUrl: 'https://github.com/JeanFrancoisUccelli',
-  cvOnline: 'jeff-uccelli-cv-online.netlify.app',
-  cvOnlineUrl: 'https://jeff-uccelli-cv-online.netlify.app',
   location: 'La Fare-les-Oliviers (13)',
   mobility: 'Mobile / Bouches-du-Rhône — Ouvert au remote',
 }
