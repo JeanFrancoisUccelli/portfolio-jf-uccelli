@@ -1,0 +1,135 @@
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-7);
+}
+
+.skill-group {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  transition: all 0.3s var(--ease);
+}
+
+.skill-group:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px -15px rgba(13, 13, 13, 0.1);
+}
+
+.skill-group__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skill-group__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skill-group__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 0.92rem;
+  color: var(--color-ink-soft);
+  line-height: 1.5;
+}
+
+.skill-group__bullet {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  margin-top: 0.7em;
+}
+
+/* Bloc Soft skills + langues */
+.skills__extra {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 700px) {
+  .skills__extra {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+.skills__extra-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+
+.skills__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip {
+  padding: 0.45rem 1rem;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  transition: all 0.2s var(--ease);
+}
+
+.chip:hover {
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+}
+
+.skills__languages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skills__languages li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-2) 0;
+  border-bottom: 1px dashed var(--color-border);
+  gap: var(--space-3);
+}
+
+.skills__languages li:last-child {
+  border-bottom: none;
+}
+
+.skills__lang-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--color-ink);
+  font-size: 1.05rem;
+}
+
+.skills__lang-level {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  font-style: italic;
+}

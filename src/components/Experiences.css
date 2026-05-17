@@ -1,0 +1,134 @@
+.experiences__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.exp {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-6);
+  position: relative;
+  padding-bottom: var(--space-7);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.exp:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+@media (max-width: 800px) {
+  .exp {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}
+
+/* Colonne période */
+.exp__period {
+  position: relative;
+  padding-top: 0.3rem;
+}
+
+.exp__period-text {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-2);
+}
+
+.exp__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  background: var(--color-accent-pale);
+  color: var(--color-accent);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.exp__badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* Corps */
+.exp__header {
+  margin-bottom: var(--space-4);
+}
+
+.exp__company {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.exp__location {
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-muted);
+  font-size: 0.85em;
+}
+
+.exp__role {
+  font-size: 1rem;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.exp__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.exp__highlights li {
+  position: relative;
+  padding-left: var(--space-5);
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: var(--color-ink-soft);
+}
+
+.exp__highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 14px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.exp__stack {
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-alt);
+  border-left: 2px solid var(--color-accent);
+  border-radius: 0 6px 6px 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+}
+
+.exp__stack-label {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.experiences--previous {
+  background: var(--color-bg-alt);
+}

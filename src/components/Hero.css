@@ -1,0 +1,281 @@
+.hero {
+  position: relative;
+  padding: var(--space-9) 0 var(--space-7);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, var(--color-accent-pale) 0%, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+}
+
+/* ---------- Content (gauche) ---------- */
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-5);
+}
+
+.hero__dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-accent-pale);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.hero__title {
+  font-size: clamp(3.2rem, 9vw, 6.5rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  margin-bottom: var(--space-5);
+}
+
+.hero__first {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-ink-soft);
+}
+
+.hero__last {
+  display: block;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.hero__role {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-weight: 400;
+  color: var(--color-accent);
+  margin-bottom: var(--space-5);
+}
+
+.hero__role em {
+  font-style: italic;
+}
+
+.hero__tagline {
+  max-width: 540px;
+  font-size: 1.02rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+}
+
+/* ---------- Boutons ---------- */
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background: var(--color-ink);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -10px rgba(30, 80, 55, 0.45);
+}
+
+.btn--primary span {
+  transition: transform 0.3s var(--ease);
+}
+
+.btn--primary:hover span {
+  transform: translateX(4px);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-ink);
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* ---------- Media (droite) — placeholder photo ---------- */
+.hero__media {
+  display: flex;
+  justify-content: center;
+}
+
+.hero__photo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.hero__photo-frame {
+  position: relative;
+  width: clamp(220px, 28vw, 320px);
+  aspect-ratio: 4 / 5;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  color: var(--color-muted);
+  overflow: hidden;
+  transition: transform 0.4s var(--ease);
+}
+
+.hero__photo-frame::before {
+  /* Petites diagonales décoratives discrètes */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0,
+    transparent 14px,
+    var(--color-accent-pale) 14px,
+    var(--color-accent-pale) 15px
+  );
+  opacity: 0.45;
+  z-index: 0;
+}
+
+.hero__photo-frame::after {
+  /* Coin accentué en haut à gauche */
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 28px;
+  height: 28px;
+  border-top: 2px solid var(--color-accent);
+  border-left: 2px solid var(--color-accent);
+  border-top-left-radius: 4px;
+}
+
+.hero__photo-frame:hover {
+  transform: translateY(-4px);
+}
+
+.hero__photo-icon {
+  position: relative;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  color: var(--color-accent);
+}
+
+.hero__photo-label {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+.hero__photo-hint {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.hero__photo-hint-mono {
+  font-family: var(--font-mono);
+  background: var(--color-bg-alt);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+/* ---------- Marquee bas du hero ---------- */
+.hero__marquee {
+  position: relative;
+  z-index: 1;
+  margin-top: var(--space-9);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.hero__marquee-track {
+  display: inline-flex;
+  gap: var(--space-5);
+  animation: marquee 40s linear infinite;
+}
+
+.hero__marquee-track span {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-muted);
+  padding-right: var(--space-5);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

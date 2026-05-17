@@ -1,0 +1,73 @@
+import { profile, contact } from '../data/content'
+import './Hero.css'
+
+export function Hero() {
+  return (
+    <section id="top" className="hero">
+      <div className="container hero__inner">
+        <div className="hero__content">
+          <p className="hero__eyebrow reveal">
+            <span className="hero__dot" /> Disponible — {contact.mobility}
+          </p>
+
+          <h1 className="hero__title reveal reveal-delay-1">
+            <span className="hero__first">{profile.firstName}</span>
+            <span className="hero__last">{profile.lastName}</span>
+          </h1>
+
+          <p className="hero__role reveal reveal-delay-2">
+            <em>{profile.title}</em>
+          </p>
+
+          <p className="hero__tagline reveal reveal-delay-3">{profile.tagline}</p>
+
+          <div className="hero__actions reveal reveal-delay-4">
+            <a href="#experiences" className="btn btn--primary">
+              Découvrir mon parcours
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="#contact" className="btn btn--ghost">
+              Me contacter
+            </a>
+          </div>
+        </div>
+
+        <aside className="hero__media reveal reveal-delay-2" aria-hidden="true">
+          {/* === Placeholder photo === */}
+          {/* Remplacez ce bloc par <img src="/photo.jpg" alt="Jean-François Uccelli" /> */}
+          {/* Déposez votre photo dans le dossier /public sous le nom photo.jpg */}
+          <div className="hero__photo">
+            <div className="hero__photo-frame">
+              <svg
+                className="hero__photo-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <span className="hero__photo-label">Photo</span>
+            </div>
+            <p className="hero__photo-hint">
+              <span className="hero__photo-hint-mono">/public/photo.jpg</span>
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <div className="hero__marquee" aria-hidden="true">
+        <div className="hero__marquee-track">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <span key={i}>
+              Salesforce ◇ Sitetracker ◇ HubSpot ◇ Lightning Web Components ◇ Apex ◇ SOQL ◇ ArcGIS ◇ React ◇ TypeScript ◇ Conduite du changement ◇
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
